@@ -6,18 +6,21 @@ public class MainLinked {
         SingleLinkedList singleLinkedList = new SingleLinkedList();
 
         for (int i = 0 ; i <= 10; i++) {
-            singleLinkedList. addTail(i);
+            singleLinkedList.addTail(i);
         }
 
-        System.out.println(singleLinkedList.locate(9));
+//        System.out.println(singleLinkedList.locate(9));
         System.out.println(singleLinkedList.getSize());
-        singleLinkedList.__print();
-        System.out.println(singleLinkedList.index(0));
-        singleLinkedList.deleteAtIndex(2);
-        singleLinkedList.deleteAtIndex(4);
-        singleLinkedList.deleteAtIndex(6);
-        singleLinkedList.__print();
+        singleLinkedList.__print(singleLinkedList.getHead());
+//        System.out.println(singleLinkedList.index(0));
+//        singleLinkedList.deleteAtIndex(2);
+//        singleLinkedList.deleteAtIndex(4);
+//        singleLinkedList.deleteAtIndex(6);
+//        singleLinkedList.__print();
 
-//        revertLinked(singleLinkedList);
+        // 翻转俩表
+        Node tmp = singleLinkedList.reversetLinked(singleLinkedList.getHead());
+        singleLinkedList.__print(tmp);
+
     }
 }

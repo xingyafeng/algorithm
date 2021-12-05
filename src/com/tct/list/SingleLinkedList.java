@@ -4,6 +4,10 @@ import java.util.LinkedList;
 
 public class SingleLinkedList {
 
+    public Node getHead() {
+        return head;
+    }
+
     private Node head = null;
     private int size = 0;
 
@@ -145,9 +149,9 @@ public class SingleLinkedList {
         System.out.println(linkedList.size());
     }
 
-    void __print() {
+    void __print(Node node) {
 
-        Node tmp = head;
+        Node tmp = node;
 
         if (tmp == null) {
             System.out.println("this linked is null");
@@ -158,6 +162,21 @@ public class SingleLinkedList {
             }
             System.out.println();
         }
+    }
+
+    public Node reversetLinked(Node head) {
+        Node pre = null;
+        Node cur = null;
+
+        // 三个指针，最先动的是最前面的指针，依次往前 cur pre head
+        while (head!=null) {
+            cur = head.next;
+            head.next = pre;
+            pre  = head;
+            head = cur;
+        }
+
+        return pre;
     }
 }
 
